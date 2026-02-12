@@ -42,10 +42,8 @@ body {
   background: #1e1e1e;
   padding: 20px;
   border-radius: 20px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: auto;
+  margin-top: 50px;
 }
 
 #chat-box {
