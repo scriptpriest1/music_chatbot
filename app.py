@@ -50,7 +50,7 @@ def chat():
     # Context restriction layer
     if not is_music_related(user_message):
         return jsonify({
-            "reply": "Sorry, I only handle music entertainment related messages.",
+            "reply": "Sorry, I only respond to music entertainment related messages.",
             "type": "warning"
         })
 
