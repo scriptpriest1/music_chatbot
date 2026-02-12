@@ -42,18 +42,20 @@ def home():
 @app.route("/chat", methods=["POST"])
 def chat():
     data = request.get_json()
-    user_message = data.get("message")
+    user_message = data.get("message", "")
 
-    if not user_message:
+    if not user_message.strip():
         return jsonify({"reply": "Please enter a message."})
 
     # Context restriction layer
     if not is_music_related(user_message):
         return jsonify({
-            "reply": "<span style='color: #ffc107';>Sorry, I only handle music entertainment related messages.</span>"
+            "reply": "Sorry, I only handle music entertainment related messages.",
+            "type": "warning"
         })
 
     try:
+        # Query the Llama 3 model via Ollama
         response = ollama.chat(
             model="llama3:8b-instruct-q4_0",
             messages=[
@@ -62,13 +64,15 @@ def chat():
             ]
         )
 
+        # Return plain text only
         return jsonify({
             "reply": response["message"]["content"]
         })
 
     except Exception as e:
         return jsonify({
-            "reply": f"<span style='color: #dc3545;'>Error: {str(e)}</span>"
+            "reply": f"Error: {str(e)}",
+            "type": "error"
         })
 
 

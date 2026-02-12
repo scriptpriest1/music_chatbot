@@ -83,6 +83,14 @@ body {
   justify-content: flex-start;
 }
 
+.message.bot.warning .inner {
+  color: #ffc107;
+}
+
+.message.bot.error .inner {
+  color: #dc3545;
+}
+
 .message.bot .inner {
   color: #f0f0f0;
 }
