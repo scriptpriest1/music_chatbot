@@ -1,3 +1,9 @@
+document.getElementById("user-input").addEventListener("keydown", (event) => {
+  if (event.key === "Enter" && !event.shiftKey) {
+    sendMessage();
+  }
+});
+
 async function sendMessage() {
   const inputField = document.getElementById("user-input");
   const chatBox = document.getElementById("chat-box");
@@ -6,7 +12,7 @@ async function sendMessage() {
   if (!message) return;
 
   // Display user message
-  chatBox.innerHTML += `<div class="message user">You: ${message}</div>`;
+  chatBox.innerHTML += `<div class="message user"><div class="inner">${message}</div></div>`;
 
   inputField.value = "";
 
@@ -22,7 +28,7 @@ async function sendMessage() {
   const data = await response.json();
 
   // Display bot reply
-  chatBox.innerHTML += `<div class="message bot">Bot: ${data.reply}</div>`;
+  chatBox.innerHTML += `<div class="message bot"><div class="inner">${data.reply}</div></div>`;
 
   chatBox.scrollTop = chatBox.scrollHeight;
 }

@@ -50,7 +50,7 @@ def chat():
     # Context restriction layer
     if not is_music_related(user_message):
         return jsonify({
-            "reply": "❌ This chatbot only handles music entertainment related queries."
+            "reply": "<span style='color: #ffc107';>Sorry, I only handle music entertainment related messages.</span>"
         })
 
     try:
@@ -68,7 +68,7 @@ def chat():
 
     except Exception as e:
         return jsonify({
-            "reply": f"Error: {str(e)}"
+            "reply": f"<span style='color: #dc3545;'>Error: {str(e)}</span>"
         })
 
 
