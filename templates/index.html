@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Entertainment Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="chat-container">
+    <h2>🎵 Music Entertainment Chatbot</h2>
+
+    <div id="chat-box"></div>
+
+    <div class="input-area">
+        <input type="text" id="user-input" placeholder="Ask about artists, songs, events..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
