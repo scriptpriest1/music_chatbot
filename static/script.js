@@ -27,7 +27,7 @@ async function sendMessage() {
   typingDiv.classList.add("message", "bot");
   typingDiv.id = "typing-indicator";
   typingDiv.innerHTML = `
-    <div class="inner">Melo is typing</div>
+    <div class="inner" style="opacity: 0.5;">Melo is typing</div>
   `;
   chatBox.appendChild(typingDiv);
 

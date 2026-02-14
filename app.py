@@ -14,6 +14,7 @@ You ONLY answer questions related to:
 - Music events
 - Streaming platforms
 - Music genres
+- and simple greeting from the user
 
 If a user asks anything outside music entertainment,
 reply strictly with:
@@ -27,7 +28,9 @@ MUSIC_KEYWORDS = [
     "concert", "event", "stream",
     "spotify", "genre", "lyrics",
     "band", "rapper", "singer",
-    "dj", "producer"
+    "dj", "producer", "hello", "hi", 
+    "good morning", "good afternoon", "good evening", 
+    "good night", "Melo"
 ]
 
 def is_music_related(message):
