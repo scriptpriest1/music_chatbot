@@ -30,7 +30,7 @@ MUSIC_KEYWORDS = [
     "band", "rapper", "singer",
     "dj", "producer", "hello", "hi", 
     "good morning", "good afternoon", "good evening", 
-    "good night", "Melo"
+    "good night", "What's up"
 ]
 
 def is_music_related(message):
